@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2dd050n0mk8g"]
+
+[ext_resource type="Script" path="res://scripts/endgame_menu.gd" id="1_3b58u"]
+[ext_resource type="Texture2D" uid="uid://f1k0evg1odi7" path="res://assets/graphics/Blue.png" id="1_mtbex"]
+
+[node name="EndgameMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3b58u")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_mtbex")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 323.0
+offset_top = 126.0
+offset_right = 744.0
+offset_bottom = 304.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "game over"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 339.0
+offset_right = 490.0
+offset_bottom = 414.0
+theme_override_font_sizes/font_size = 20
+text = "TRY AGAIN"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 587.0
+offset_top = 339.0
+offset_right = 782.0
+offset_bottom = 414.0
+theme_override_font_sizes/font_size = 20
+text = "QUIT"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
